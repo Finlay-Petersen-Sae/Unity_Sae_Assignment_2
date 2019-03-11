@@ -37,14 +37,16 @@ public class DanceTeamInit : MonoBehaviour
         // set the toupe names for teamA and teamB
         teamA.SetTroupeName("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"); // make better than this
 
-        // - get list of names from name gen
+        // - Get list of names from name gen
         // - use the variable nameGenerator to generate names
         // - nameGenerator as a GenrateNames function
 
         // - Initialise the team names for team A and B
-        // example
+        // example:
+        // namesForA and namesForB should be based what you get
+        //  from nameGenerator.
         // teamA.InitialiseTeamFromNames(dancerPrefab, 1, namesForA);
-        // teamA.InitialiseTeamFromNames(dancerPrefab, 1, namesFor);
+        // teamB.InitialiseTeamFromNames(dancerPrefab, -1, namesForB);
 
         Debug.LogWarning("InitTeams called, needs to create character names via CharacterNameGenerator and get them into the team.InitaliseTeamFromNames");
     }
