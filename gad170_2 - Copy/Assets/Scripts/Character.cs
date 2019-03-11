@@ -41,6 +41,18 @@ public class Character : MonoBehaviour
 
     public void InitialStats()
     {
+        // all characters start at level 1
+        level = 1;
+
+        // start at 0 experience points 
+        xp = 0;
+        // for you to do - set the other stats
+        //stats.rhythm
+        rhythm = Random.Range(3, 7);
+        //stats.luck
+        luck = 0;
+        //stats.style
+       style = Random.Range(3, 7);
         // TODO - First, you can
         //this will be simiar to the code that is used for initial stats.
         Debug.LogWarning("InitialStats called, needs to distribute points into stats. This should be able to be ported from previous brief work");
