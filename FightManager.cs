@@ -43,7 +43,7 @@ public class FightManager : MonoBehaviour
         yield return new WaitForSeconds(fightAnimTime);
         //DO this second
         //can reuse code from battle in battle handler
-        float outcome = 1;
+        float outcome = 0;
        lhs.luck = Random.Range(1, 7);
         rhs.luck = Random.Range(1, 7);
         float rhsBoogie = rhs.rhythm + rhs.style * 2 + rhs.luck * 2;
@@ -62,7 +62,18 @@ public class FightManager : MonoBehaviour
         Debug.Log("rhs style = " +  rhs.style);
         Debug.Log("rhs luck = " +  rhs.luck);
         //defaulting to draw 
+
+        // somewhere here you are setting otcome
+        //todo: when you set outcome 
+        // also set swinner and defeated
+        //rough example
+        // outcome = 1: // for my version 1 means LHS won
+        //winner = lhs;
+        //defeated = rhs;
+       
+        outcome = 1;
         Character winner = lhs, defeated = rhs;
+    
         Debug.LogWarning("Attack called, needs to use character stats to determine winner with win strength from 1 to -1. This can most likely be ported from previous brief work.");
 
 
