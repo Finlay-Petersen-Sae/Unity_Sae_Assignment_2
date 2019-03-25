@@ -4,11 +4,6 @@ using UnityEngine;
 
 /// <summary>
 /// Represents a single character, their stats, name and current mojo (or hp) in the dance battle.
-/// 
-/// TODO:
-///     Initialise stats for the character that will be used to determine their victory in dance offs.
-///     You may wish or need to add additional stats here for use in the fight (FightManager)
-///     May need to handle the loss of mojo when loosing a fight
 /// </summary>
 public class Character : MonoBehaviour
 {
@@ -46,15 +41,12 @@ public class Character : MonoBehaviour
 
         // start at 0 experience points 
         xp = 0;
-        // for you to do - set the other stats
-        //stats.rhythm
+        //set rhythm to a random number between 3 and 6
         rhythm = Random.Range(3, 7);
-        //stats.luck
+        //set luck to 0
         luck = 0;
-        //stats.style
-       style = Random.Range(3, 7);
-        // TODO - First, you can
-        //this will be simiar to the code that is used for initial stats.
+        //set style to a random number between 3 and 6   
+ 
         Debug.LogWarning("InitialStats called, needs to distribute points into stats. This should be able to be ported from previous brief work");
     }
 

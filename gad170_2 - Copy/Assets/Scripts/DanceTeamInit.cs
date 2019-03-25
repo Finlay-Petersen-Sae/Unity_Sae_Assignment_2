@@ -7,10 +7,6 @@ using System.Linq;
 /// This class generates and assigns names to the 2 dance teams in our dance off battle.
 /// It also controls the number of dancers on each team via the inspector
 /// It also uses the name generator to pass character names to the teams so they can initialise
-/// 
-/// TODO:
-///     Generate unique team names for both teams and assign them via team_.SetTroupeName(str);
-///     Use the nameGenerator to get enough names for the number of dancers on both teams and pass the required names via array to each team for init (InitaliseTeamFromNames)
 /// </summary>
 public class DanceTeamInit : MonoBehaviour
 {
@@ -33,21 +29,24 @@ public class DanceTeamInit : MonoBehaviour
     {
         Debug.LogWarning("InitTeams called, needs to generate names for the teams and set them with teamA.SetTroupeName");
 
-        // TODO for WEEK7 - do this third 
-        // set the toupe names for teamA and teamB
-        teamA.SetTroupeName("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"); // make better than this
+       
+        teamA.SetTroupeName("Dance Patrol"); 
+        // set team A troupe name 
+        teamB.SetTroupeName("Boogie Fever");
+        // set team B troupe name
 
-        // - Get list of names from name gen
-        // - use the variable nameGenerator to generate names
-        // - nameGenerator as a GenrateNames function
-
-        // - Initialise the team names for team A and B
-        // example:
-        // namesForA and namesForB should be based what you get
-        //  from nameGenerator.
-        // teamA.InitialiseTeamFromNames(dancerPrefab, 1, namesForA);
-        // teamB.InitialiseTeamFromNames(dancerPrefab, -1, namesForB);
-
+        
+        nameGenerator.GenerateNames(6);
+        // use the name generator to generate 6 names
+        CharacterName[] teamANames = nameGenerator.GenerateNames(3);
+        // take 3 names from the list to use for Team A
+        CharacterName[] teamBNames = nameGenerator.GenerateNames(3);
+      
+      
+        teamA.InitaliseTeamFromNames(dancerPrefab, 1, teamANames);
+        // initialize team A names
+        teamB.InitaliseTeamFromNames(dancerPrefab, 1, teamBNames);
+        // initialize team B names
         Debug.LogWarning("InitTeams called, needs to create character names via CharacterNameGenerator and get them into the team.InitaliseTeamFromNames");
     }
 }

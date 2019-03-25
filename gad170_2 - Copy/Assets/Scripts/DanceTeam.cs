@@ -6,10 +6,6 @@ using UnityEngine.UI;
 /// <summary>
 /// Object that holds and represents a Dance Troupe or Team. A list of dancers on the roster, the ones still able to dance.
 /// It is also responsible for holding team specific data like where to line them up, their colors, and so on.
-/// 
-/// TODO: 
-///     This needs to handle adding and removing dancers from the active and/or all dancers lists
-///     This is where you might add additional feedback for team actions
 /// </summary>
 public class DanceTeam : MonoBehaviour
 {
@@ -26,20 +22,26 @@ public class DanceTeam : MonoBehaviour
 
     public void AddNewDancer(Character dancer)
     {
-        // TODO dor week 7 - Do this dirst
-        //dancer is our input
-        //dancer needs to get added to bothlists
+        allDancers.Add(dancer);
+        // add dancer to alldancers list
+        activeDancers.Add(dancer);
+        //add dancer to activedancer list
+        dancer.myTeam = this;
+        // this is the dancer for the team
 
         Debug.LogWarning("AddNewDancer called, it needs to put dancer in both lists and set the dancers team.");
     }
 
     public void RemoveFromActive(Character dancer)
     {
-        //TODO for week 7 - do this second
-        //dance is our input
-        // remove dancer from active lists
+        /
         // set the dancer's mojoRemaining to 0
-
+        dancer.mojoRemaining = 0;
+        //Removing Mojo
+        allDancers.Remove(dancer);
+        //removing dancer from alldancer list
+        activeDancers.Remove(dancer);
+        //removing dancer from activedancer list
         Debug.LogWarning("RemoveFromActive called, it needs to take the dancer out of the active list and possibly update selectedness, mojo etc.");
     }
 
